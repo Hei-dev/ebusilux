@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Product Info - LuxBox</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                padding: 0%;
+                margin: 0%;
+
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                overflow-x: hidden;
+            }
+
+            #item_img{
+                width: 100%;
+                height: auto;
+            }
+
+            #prod_info_table{
+                table-layout: fixed;
+            }
+
+            #add_cart_a{
+                display:inline-block;
+
+                padding: 1em;
+                text-align: center;
+                vertical-align: middle;
+                border: 0.25em solid #73612D;
+                border-radius: 0.5em;
+                width: 70%;
+
+                text-decoration: none;
+                
+                transition: 0.3s;
+
+                background-color: #73612D;
+                color: white;
+
+                cursor: pointer;
+            }
+
+            #add_cart_a:hover{
+                text-decoration: none;
+                border: 0.25em solid #73612D;
+                
+                background-color: white;
+                color: #73612D;   
+            }
+
+            #add_cart_a_n{
+                display:inline-block;
+
+                padding: 1em;
+                text-align: center;
+                vertical-align: middle;
+                border: 0.25em solid #73612D;
+                border-radius: 0.5em;
+                width: 70%;
+
+                text-decoration: none;
+                
+                transition: 0.3s;
+
+                background-color: #73612D;
+                color: white;
+
+                cursor: pointer;
+            }
+
+            #add_cart_a_n:hover{
+                text-decoration: none;
+                border: 0.25em solid #73612D;
+                
+                background-color: white;
+                color: #73612D;   
+            }
+
+            .hidden_narrow_six{
+                display:none;
+            }
+
+            .show_narrow_six{
+                display: block;
+            }
+
+            @media only screen and (min-width: 600px) {
+                .hidden_narrow_six{
+                    display:block;
+                }
+                .show_narrow_six{
+                    display: none;
+                }
+            }
+
+        </style>
+
+        <link rel="stylesheet" href="/navbar.css">
+        <link rel="stylesheet" href="/bottom_nav.css">
+    </head>
+    <body>
+        <ul id="nav_bar"></ul>
+        <table id="prod_info_table">
+            <tr><td style="width: 65%;"><h1 id="prod_name_heading"></h1></td></tr>
+            <tr>
+                <td><img id="item_img"></td>
+                <td class="hidden_narrow_six">
+                    <h2 id="price_head" style="vertical-align: bottom;"></h2>
+                    <div>
+                        <label for="qty_num_input">Quantity: </label>
+                        <input id="qty_num_input" type="number" value="1" min="1" placeholder="Quantity" style="display:inline; width:3em;">
+                        <div id="add_cart_a">Add to cart</div>
+                        <div id="oos_div" style="display:none">
+                            <label for="oos_input">
+                                This item is out of stock,
+                                would you like to get notified when the item is available?
+                            </label>
+                            <input id="oos_input" placeholder="Email address">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr class="show_narrow_six">
+                <td>
+                <h2 id="price_head_n" style="vertical-align: bottom;"></h2>
+                <div>
+                    <label for="qty_num_input_n">Quantity: </label>
+                    <input id="qty_num_input_n" type="number" value="1" min="1" placeholder="Quantity" style="display:inline; width:3em;">
+                    <div id="add_cart_a_n">Add to cart</div>
+                    <div id="oos_div_n" style="display:none;">
+                        <label for="oos_input_n">
+                            This item is out of stock,
+                            would you like to get notified when the item is available?
+                        </label>
+                        <input id="oos_input_n" placeholder="Email address">
+                    </div>
+                </div>
+                </td>
+            </tr>
+            <tr><td><p id="prod_desc_para"></p></td></tr>
+        </table>
+        <div id="bottom_nav"></div>
+    </body>
+    <script src="/navbar.js"></script>
+    <script src="/bottom_nav.js"></script>
+    <script src="/product_info.js"></script>
+</html>

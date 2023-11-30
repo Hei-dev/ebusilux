@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Products - LuxBox</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                padding: 0%;
+                margin: 0%;
+
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+                overflow-x: hidden;
+                
+                
+            }
+
+            hr{
+                border-color: transparent;
+            }
+
+            #items_list{
+                margin-left: auto;
+                margin-right: auto;
+
+                border-style: outset;
+                border-width: 0.25em;
+                border-radius: 1em;
+
+                border-color: #BFB299;
+            }
+
+            .item_info{
+                display: inline-block;
+
+                width:  12em;
+                height: 12em;
+                transition: 0.3s;
+
+                text-decoration: none;
+                color: black;
+
+                border: 0.25em solid #BFB299;
+                border-radius: 0.25em;
+                margin: 1em;
+
+                font-size: 0.7em;;
+            }
+
+            .item_info img{
+                max-height: 100%;
+                max-width: 100%;
+            }
+
+            .item_info:hover{
+                background-color: #BFB299;
+            }
+
+            #more_prod_a{
+                padding: 1em;
+                text-align: center;
+                vertical-align: middle;
+                border: 0.1em solid #BFB299;
+                border-radius: 0.5em;
+
+                text-decoration: none;
+                color: #73612D;
+                background-color: white;
+                transition: 0.3s;
+
+                cursor: pointer;
+                width: 30%;
+            }
+
+            #more_prod_a:hover{
+                text-decoration: none;
+                background-color: #73612D;
+                color: #BFB299; 
+            }
+
+            @media only screen and (min-width: 600px) {
+                .item_info{
+                    transition: 0.3s;
+
+                    font-size: 0.7em;
+                }
+            }
+
+            @media only screen and (min-width: 840px) {
+                .item_info{
+                    width:  12em;
+                    height: 12em;
+                    transition: 0.3s;
+
+                    font-size: 1em;
+                }
+            }
+
+        </style>
+        <link rel="stylesheet" href="/navbar.css">
+        <link rel="stylesheet" href="/bottom_nav.css">
+    </head>
+    <body>
+        <ul id="nav_bar"></ul>
+        <h1 style="text-align: center;">Available items</h1>
+        <div style="text-align: center;">
+            <input id="filter_input" placeholder="Search item..." >
+            <button onclick="searchItems(document.getElementById('filter_input').value);">Search</button>
+        </div>
+        <div style="text-align: center;">
+            Filter:
+            <label id="disney_cb_txt" for="disney_cb" >Disney</label><input class="prod_cb" type="checkbox" id="disney_cb">
+            <label id="crayon_cb_txt" for="crayon_cb" >Crayon Shin-chan</label><input class="prod_cb" type="checkbox" id="crayon_cb">
+            <label id="lulu_cb_txt"   for="lulu_cb"   >LULU the Pig</label><input class="prod_cb" type="checkbox" id="lulu_cb">
+            <label id="miniso_cb_txt" for="miniso_cb" >Miniso</label><input class="prod_cb" type="checkbox" id="miniso_cb">
+            <label id="52toys_cb_txt" for="52toys_cb" >52Toys</label><input class="prod_cb" type="checkbox" id="52toys_cb">
+            <label id="popmark_cb_txt"for="popmark_cb">Popmark</label><input class="prod_cb" type="checkbox" id="popmark_cb">
+        </div>
+        <hr>
+        <br>
+        <table id="items_list"></table>
+        <br>
+        <hr>
+        <br>
+        <div style="text-align: center;">
+            <button id="more_prod_a" onclick="loadItems()">Load more products...</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <div id="bottom_nav"></div>
+    </body>
+    <script src="/navbar.js"></script>
+    <script src="/bottom_nav.js"></script>
+    <script src="./index.js"></script>
+</html>
